@@ -42,7 +42,7 @@ export default function Footer({ onOpenShare }) {
                         <a href="https://www.linkedin.com/in/karventhan-k" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                             <i className="fab fa-linkedin"></i>
                         </a>
-                        <a href="mailto:karventhanalpm@gmail.com" aria-label="Email">
+                        <a href="mailto:karventhan.work@gmail.com" aria-label="Email">
                             <i className="fas fa-envelope"></i>
                         </a>
                     </div>

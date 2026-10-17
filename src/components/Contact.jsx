@@ -79,7 +79,7 @@ export default function Contact() {
 
                         <div className="info-item">
                             <div className="icon-box"><i className="fas fa-envelope"></i></div>
-                            <span>karventhanalpm@gmail.com</span>
+                            <span>karventhan.work@gmail.com</span>
                         </div>
 
                         <div className="info-item">
@@ -92,7 +92,7 @@ export default function Contact() {
                             <div className="social-icons">
                                 <a href="https://github.com/karventhan-k" target="_blank" className="social-icon"><i className="fab fa-github"></i></a>
                                 <a href="https://www.linkedin.com/in/karventhan-k" target="_blank" className="social-icon"><i className="fab fa-linkedin"></i></a>
-                                <a href="mailto:karventhanalpm@gmail.com" className="social-icon"><i className="fas fa-envelope"></i></a>
+                                <a href="mailto:karventhan.work@gmail.com" className="social-icon"><i className="fas fa-envelope"></i></a>
                             </div>
                         </div>
                     </div>

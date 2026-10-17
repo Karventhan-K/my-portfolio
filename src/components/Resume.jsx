@@ -5,7 +5,6 @@ import { resumeData } from "../data/resume";
 export default function Resume() {
     const [activeTab, setActiveTab] = useState("experience");
     const [copied, setCopied] = useState(false);
-    const [showDownloadMenu, setShowDownloadMenu] = useState(false);
 
     const handleCopySummary = () => {
         const textToCopy = `Karventhan K - Senior MERN Stack Developer
@@ -18,80 +17,16 @@ PROFESSIONAL SUMMARY:
 ${resumeData.personalInfo.summary}
 
 FLAGSHIP PROJECTS:
-1. Debitmydata.com - Lead MERN & Full-Stack Architect
-2. Cofetti.ai - Full-Stack Generative AI SaaS
-3. BandBooker.com - Real-Time Booking & WebSockets Platform
+1. Debitmydata.com - Lead Full-Stack & MERN Architect
+2. Cofetti.ai - AI Generative SaaS Platform
+3. BandBooker.com - Real-Time Booking & Live Chat System
 
-CORE SKILLS:
-MongoDB, Express.js, React.js, Node.js, Next.js, TypeScript, RESTful APIs, AWS EC2/S3, Docker`;
+TECHNICAL SKILLS:
+MongoDB, Express.js, React.js, Node.js, Next.js, Python, FastAPI, Django, PostgreSQL, AWS EC2/S3, Docker`;
 
         navigator.clipboard.writeText(textToCopy);
         setCopied(true);
         setTimeout(() => setCopied(false), 2500);
-    };
-
-    const handleDownloadAtsText = () => {
-        const atsResumeContent = `=====================================================
-KARVENTHAN K - SENIOR MERN STACK DEVELOPER
-=====================================================
-Email: ${resumeData.personalInfo.email}
-Phone: ${resumeData.personalInfo.phone}
-LinkedIn: ${resumeData.personalInfo.linkedin}
-Location: ${resumeData.personalInfo.location}
-Status: ${resumeData.personalInfo.availability}
-
------------------------------------------------------
-PROFESSIONAL SUMMARY
------------------------------------------------------
-${resumeData.personalInfo.summary}
-
------------------------------------------------------
-CORE TECHNICAL SKILLS
------------------------------------------------------
-MERN Stack: MongoDB, Express.js, React.js, Node.js
-Frontend: Next.js, Redux, Tailwind CSS, TypeScript, JavaScript (ES6+), HTML5, CSS3
-Backend: Node.js, Express, REST APIs, GraphQL, WebSockets, Python, FastAPI, Django
-Databases: MongoDB (Mongoose), PostgreSQL, Redis, SQL
-Cloud & DevOps: AWS (EC2, S3), Docker, Linux (Debian), Nginx, PM2, Git
-
------------------------------------------------------
-WORK EXPERIENCE
------------------------------------------------------
-${resumeData.experience.map(exp => `
-${exp.role.toUpperCase()}
-${exp.company} | ${exp.location} (${exp.period})
-${exp.projects.map(p => `
-* Project: ${p.name} (${p.role})
-${p.points.map(pt => `  - ${pt}`).join("\n")}
-`).join("\n")}
-`).join("\n")}
-
------------------------------------------------------
-EDUCATION
------------------------------------------------------
-${resumeData.education.map(e => `${e.degree} - ${e.institution} (${e.period})`).join("\n")}
-
------------------------------------------------------
-LEADERSHIP & MENTORSHIP
------------------------------------------------------
-${resumeData.leadership.map(l => `* ${l}`).join("\n")}
-`;
-
-        const blob = new Blob([atsResumeContent], { type: "text/plain;charset=utf-8" });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "Karventhan_MERN_Resume_ATS.txt";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
-        setShowDownloadMenu(false);
-    };
-
-    const handlePrint = () => {
-        window.print();
-        setShowDownloadMenu(false);
     };
 
     return (
@@ -114,83 +49,26 @@ ${resumeData.leadership.map(l => `* ${l}`).join("\n")}
                             <h3 className="candidate-name">{resumeData.personalInfo.name}</h3>
                             <p className="candidate-title">{resumeData.personalInfo.title}</p>
                             <div className="candidate-chips">
+                                <span><i className="fas fa-envelope"></i> {resumeData.personalInfo.email}</span>
+                                <span><i className="fas fa-phone-alt"></i> {resumeData.personalInfo.phone}</span>
                                 <span><i className="fas fa-map-marker-alt"></i> {resumeData.personalInfo.location}</span>
                                 <span className="urgent-tag"><i className="fas fa-bolt"></i> {resumeData.personalInfo.availability}</span>
                             </div>
                         </div>
 
-                        {/* Download Options Group */}
+                        {/* Direct PDF Downloader & Copy Summary */}
                         <div className="resume-actions-wrapper">
-                            <div className="download-dropdown-container">
-                                <button
-                                    type="button"
-                                    onClick={() => setShowDownloadMenu(!showDownloadMenu)}
-                                    className="btn btn-primary btn-sm download-main-btn"
-                                    id="download-resume-btn"
-                                    aria-expanded={showDownloadMenu}
-                                >
-                                    <i className="fas fa-download"></i>
-                                    <span>Download Resume</span>
-                                    <i className={`fas fa-chevron-down dropdown-arrow ${showDownloadMenu ? 'rotated' : ''}`}></i>
-                                </button>
-
-                                {showDownloadMenu && (
-                                    <div className="download-dropdown-menu">
-                                        <a
-                                            href={resumeData.personalInfo.pdfUrl}
-                                            download="Karventhan_MERN_Resume.pdf"
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="dropdown-item"
-                                            onClick={() => setShowDownloadMenu(false)}
-                                        >
-                                            <i className="fas fa-file-pdf text-red"></i>
-                                            <div>
-                                                <strong>Official PDF Resume</strong>
-                                                <small>Formatted for HR & Recruiters</small>
-                                            </div>
-                                        </a>
-
-                                        <a
-                                            href={resumeData.personalInfo.pdfUrl}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="dropdown-item"
-                                            onClick={() => setShowDownloadMenu(false)}
-                                        >
-                                            <i className="fas fa-external-link-alt text-cyan"></i>
-                                            <div>
-                                                <strong>View PDF in Browser</strong>
-                                                <small>Open in new tab to read or share</small>
-                                            </div>
-                                        </a>
-
-                                        <button
-                                            type="button"
-                                            onClick={handleDownloadAtsText}
-                                            className="dropdown-item btn-dropdown-action"
-                                        >
-                                            <i className="fas fa-file-alt text-green"></i>
-                                            <div>
-                                                <strong>ATS Plain Text (.txt)</strong>
-                                                <small>Ideal for automated ATS systems</small>
-                                            </div>
-                                        </button>
-
-                                        <button
-                                            type="button"
-                                            onClick={handlePrint}
-                                            className="dropdown-item btn-dropdown-action"
-                                        >
-                                            <i className="fas fa-print text-purple"></i>
-                                            <div>
-                                                <strong>Print / Save as PDF</strong>
-                                                <small>Print directly from browser</small>
-                                            </div>
-                                        </button>
-                                    </div>
-                                )}
-                            </div>
+                            <a
+                                href={resumeData.personalInfo.pdfUrl}
+                                download="Karventhan_MERN_Resume.pdf"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="btn btn-primary btn-sm"
+                                id="download-resume-btn"
+                            >
+                                <i className="fas fa-file-pdf"></i>
+                                <span>Download PDF Resume</span>
+                            </a>
 
                             <button
                                 type="button"
@@ -304,6 +182,16 @@ ${resumeData.leadership.map(l => `* ${l}`).join("\n")}
                                         </div>
                                     </div>
 
+                                    {/* Programming Languages */}
+                                    <div className="resume-skill-card">
+                                        <h4><i className="fas fa-code"></i> Programming Languages</h4>
+                                        <div className="skill-chip-wrap">
+                                            {resumeData.skills.languages.map((s, idx) => (
+                                                <span key={idx} className="skill-chip">{s}</span>
+                                            ))}
+                                        </div>
+                                    </div>
+
                                     {/* Frontend */}
                                     <div className="resume-skill-card">
                                         <h4><i className="fas fa-desktop"></i> Frontend Ecosystem</h4>
@@ -379,9 +267,9 @@ ${resumeData.leadership.map(l => `* ${l}`).join("\n")}
 
                     {/* Developer Updatable Notice */}
                     <div className="resume-editable-footer">
-                        <i className="fas fa-info-circle"></i>
+                        <i className="fas fa-check-circle text-green"></i>
                         <span>
-                            To update your resume details or download file anytime: edit <code>src/data/resume.js</code> or replace <code>public/karventhan.pdf</code>.
+                            Resume synchronized with latest data. To adjust info anytime, edit <code>src/data/resume.js</code>.
                         </span>
                     </div>
 

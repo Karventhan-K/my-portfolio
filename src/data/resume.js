@@ -2,8 +2,9 @@
  * =====================================================================
  * KARVENTHAN'S RESUME DATA
  * =====================================================================
- * You can edit any details below (experience, skills, contact info, etc.)
- * whenever you need to update your portfolio resume.
+ * Updated from: public/Karventhan K.docx
+ * Contains latest professional summary, contact info, client projects,
+ * technical skills matrix, education, and leadership details.
  * =====================================================================
  */
 
@@ -11,14 +12,15 @@ export const resumeData = {
     personalInfo: {
         name: "Karventhan K",
         title: "Senior MERN Stack & Full-Stack Developer",
-        email: "karventhanalpm@gmail.com",
+        email: "karventhan.work@gmail.com",
         phone: "+91 6369078990",
         location: "Coimbatore, Tamil Nadu, India",
         linkedin: "https://www.linkedin.com/in/karventhan-k",
-        github: "https://github.com/karventhan-k",
-        availability: "Immediately Available for Full-Time / Contract MERN Stack Roles",
+        github: "https://github.com/Karventhan-K",
+        availability: "Immediately Available for Urgent MERN Stack & Full-Stack Roles",
         pdfUrl: "/karventhan.pdf",
-        summary: "Results-driven Senior MERN Stack & Full-Stack Engineer with over 4+ years of experience architecting high-performance web applications, scalable REST/GraphQL APIs, real-time WebSocket platforms, and AI-powered systems. Proven track record leading end-to-end development for flagship platforms like Debitmydata.com and Cofetti.ai. Proficient in MongoDB, Express.js, React.js, Node.js, Next.js, and AWS cloud deployments."
+        docxUrl: "/Karventhan K.docx",
+        summary: "Senior Software Engineer with 4+ years of experience developing scalable web applications using the MERN Stack (MongoDB, Express.js, React.js, Node.js), Next.js, Python (FastAPI, Django), PostgreSQL, and AWS. Experienced in designing and developing RESTful APIs, integrating AI features with OpenAI, developing responsive frontend applications, implementing secure authentication and payment systems, and deploying production applications using Docker, AWS EC2, S3, Nginx, and GitHub Actions. Passionate about solving real-world problems, writing clean and maintainable code, and delivering reliable, high-quality software."
     },
     
     highlights: [
@@ -37,23 +39,21 @@ export const resumeData = {
             type: "Full-Time",
             projects: [
                 {
-                    name: "Debitmydata.com (Flagship Platform)",
-                    role: "Full-Stack / MERN Architect",
+                    name: "Debitmydata.com (Flagship Full-Stack Platform)",
+                    role: "Lead Full-Stack / MERN Architect",
                     points: [
-                        "Architected and deployed end-to-end scalable web applications using React.js/Next.js frontend with robust Node.js/Express and FastAPI backend microservices.",
-                        "Engineered secure authentication flows (JWT, OAuth 2.0, Google SSO) and role-based access control (RBAC).",
-                        "Implemented advanced search, dynamic multi-filter pipelines, and AI-driven insights integrated with OpenAI Chat Completion APIs.",
-                        "Designed and integrated Stripe recurring subscription billing flows with webhook handlers and automated data pipelines.",
-                        "Managed AWS EC2 cloud infrastructure, utilizing PM2, Nginx reverse proxy, and S3 asset buckets, delivering 99.9% uptime under high traffic."
+                        "Designed and developed end-to-end modules across FastAPI, Django, and Next.js, delivering smooth authentication flows, SSO, advanced search/filtering, static content pipelines, and AI-driven features integrated with OpenAI Chat Completion.",
+                        "Developed robust scalable Stripe subscription flows, optimized high-traffic backend APIs, and automated several data workflows to reduce operational overhead.",
+                        "Deployed the platform on AWS EC2 with PM2 (frontend) and Gunicorn (backend), configured S3 for secure asset storage, and ensured high uptime through performance tuning and efficient resource management."
                     ]
                 },
                 {
                     name: "Cofetti.ai",
-                    role: "Full-Stack AI Developer",
+                    role: "Backend & AI Full-Stack Developer",
                     points: [
-                        "Built AI-powered image and text generation application utilizing OpenAI DALL·E 3 and ChatCompletion models.",
-                        "Implemented Stripe-driven credit purchase workflows, wallet balance updates, and transactional checkout systems.",
-                        "Maintained high-availability services on AWS EC2 with automated monitoring and load distribution."
+                        "Implemented secure authentication, Django SSO, and AI-powered image and text generation using OpenAI (DALL·E 3 & ChatCompletion), along with robust CRUD modules backed by PostgreSQL.",
+                        "Built a reliable Stripe-driven credits and checkout system, enabling smooth transaction flows and precise credit consumption tracking.",
+                        "Deployed backend services on AWS EC2 using Gunicorn and S3 storage while establishing monitoring practices that improved service stability and responsiveness."
                     ]
                 }
             ]
@@ -66,19 +66,17 @@ export const resumeData = {
             type: "Full-Time",
             projects: [
                 {
-                    name: "Elevenflo.com",
-                    role: "Frontend & Full-Stack Engineer",
+                    name: "elevenflo.com",
+                    role: "Frontend & Full-Stack Developer",
                     points: [
-                        "Engineered modular React / Next.js interfaces with Tailwind CSS for digital service platforms.",
-                        "Implemented secure client-side authentication, search filtering, and SEO optimization."
+                        "Developed frontend features using Next.js and Tailwind, including authentication modules, advanced search functionality, and multiple static pages, ensuring a clean, responsive, and user-friendly interface."
                     ]
                 },
                 {
-                    name: "Bandbooker.com",
-                    role: "Full-Stack / Real-Time Developer",
+                    name: "bandbooker.com",
+                    role: "Frontend & Real-Time Chat Developer",
                     points: [
-                        "Built responsive booking frontend with Next.js, integrating Google SSO login and profile management.",
-                        "Architected real-time WebSocket messaging and live chat system for immediate band-client communications."
+                        "Built the full Next.js frontend with complete Google SSO authentication, implemented static pages, and developed a real-time WebSocket-based live chat messaging system for seamless user communication."
                     ]
                 }
             ]
@@ -91,12 +89,18 @@ export const resumeData = {
             type: "Full-Time",
             projects: [
                 {
-                    name: "Whizco & Webopt.ai",
-                    role: "Full-Stack Developer",
+                    name: "whizco",
+                    role: "Backend & Auth Developer",
                     points: [
-                        "Developed RESTful CRUD APIs, role-based access controls, and authentication mechanisms.",
-                        "Built a feature-rich Google Chrome extension for automated DOM analysis, network tracking, and console error logging linked to WebOpt.ai APIs.",
-                        "Integrated analytics telemetry dashboards using React.js, Tailwind CSS, and optimized SQL/PostgreSQL databases."
+                        "Developed backend features using Django, implementing robust authentication, role-based access, CRUD APIs, and a full Google SSO integration to streamline login and account management."
+                    ]
+                },
+                {
+                    name: "webopt.ai (In-house Project)",
+                    role: "Frontend & Chrome Extension Developer",
+                    points: [
+                        "Integrated analytics data into the UI, built fully responsive pages using Next.js and Tailwind CSS, and implemented database-driven filtering features to deliver fast, dynamic, and user-centric workflows.",
+                        "Built a fully responsive Chrome extension with automated page analysis, real-time console and network performance tracking, and seamless integration with WebOpt.ai APIs to enable in-browser diagnostics, error detection, and streamlined debugging workflows."
                     ]
                 }
             ]
@@ -105,33 +109,35 @@ export const resumeData = {
 
     skills: {
         mern: [
-            { name: "MongoDB", level: "Advanced", icon: "fas fa-database" },
-            { name: "Express.js", level: "Expert", icon: "fas fa-server" },
-            { name: "React.js", level: "Expert", icon: "fab fa-react" },
-            { name: "Node.js", level: "Expert", icon: "fab fa-node-js" }
+            { name: "MongoDB", level: "Aggregations & Mongoose", icon: "fas fa-database" },
+            { name: "Express.js", level: "REST APIs & Middleware", icon: "fas fa-server" },
+            { name: "React.js", level: "Hooks, Context & State", icon: "fab fa-react" },
+            { name: "Node.js", level: "Event Loop & Async I/O", icon: "fab fa-node-js" }
+        ],
+        languages: [
+            "JavaScript (ES6+)", "TypeScript", "Python", "SQL", "Bash"
         ],
         frontend: [
-            "Next.js (App Router)", "React.js", "Redux Toolkit", "Zustand", 
-            "Tailwind CSS", "JavaScript (ES6+)", "TypeScript", "HTML5 & CSS3", 
-            "Responsive Design", "WebSockets"
+            "React.js", "Next.js (App Router)", "Tailwind CSS", "Redux Toolkit", 
+            "Zustand", "HTML5", "CSS3", "Responsive UI", "WebSockets"
         ],
         backend: [
-            "Node.js", "Express.js", "RESTful APIs", "FastAPI", "Python", 
-            "Django", "Microservices", "JWT Auth", "OAuth 2.0 / SSO", "Stripe API"
+            "Node.js", "Express.js", "FastAPI", "Django", "REST APIs", 
+            "Authentication (OAuth, JWT, SSO)", "OpenAI APIs", "Stripe API"
         ],
         database: [
-            "MongoDB (Mongoose)", "PostgreSQL", "MySQL", "Redis Caching", "Database Indexing & Aggregations"
+            "MongoDB", "PostgreSQL", "MySQL", "SQLite", "Redis Caching"
         ],
         devops: [
-            "AWS (EC2, S3, CloudFront)", "Docker", "Git & GitHub", "Linux (Debian/Ubuntu)", 
-            "Nginx", "PM2 Process Manager", "CI/CD Pipelines"
+            "Docker", "Docker Compose", "AWS (EC2, S3)", "Nginx", "PM2", 
+            "Gunicorn", "GitHub Actions", "Linux (Debian/Ubuntu)", "Git & GitHub", "Postman"
         ]
     },
 
     leadership: [
-        "Mentored and trained junior developers in React.js, Next.js, Node.js, and API architecture.",
-        "Conducted code reviews, established Git workflow standards, and promoted clean code principles.",
-        "Collaborated with cross-functional teams in agile sprints to meet tight production deadlines."
+        "Mentored junior developers at Episyche Technologies by providing hands-on training in Python, Django, React.js, and Next.js.",
+        "Conducted thorough code reviews and established repository best practices to improve code quality and maintainability.",
+        "Supported real-world client project delivery and accelerated developer onboarding in cross-functional agile teams."
     ],
 
     education: [
